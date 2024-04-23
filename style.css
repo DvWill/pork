@@ -1,0 +1,69 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black; /* Adicionado fundo preto para o corpo */
+}
+
+.game-board {
+  background: url('fogo.gif');
+  background-size: cover;
+  width: 100%;
+  height: 100vh; /* Alterado para ocupar 100% da altura da tela */
+  border-bottom: 2vh solid #121122; /* Alterado para usar unidade relativa */
+  position: relative;
+  overflow: hidden;
+}
+
+.pipe {
+  position: absolute;
+  bottom: 0;
+  width: 15vw; /* Alterado para usar largura relativa à largura da tela */
+  right: 0;
+  animation: pipe-animation 2.5s infinite linear; /* Aumentado o tempo da animação para ser mais visível em telas maiores */
+}
+
+.mario {
+  width: 20vw; /* Alterado para usar largura relativa à largura da tela */
+  position: absolute;
+  bottom: 0;
+}
+
+.jump {
+  animation: jump 500ms ease-out;
+}
+
+@keyframes pipe-animation {
+  from {
+    right: -15vw; /* Alterado para usar largura relativa à largura da tela */
+  }
+  
+  to {
+    right: 100%;
+  }
+}
+
+@keyframes jump {
+  0% {
+    bottom: 0;
+  }
+
+  40% {
+    bottom: 30vh; /* Alterado para usar altura relativa à altura da tela */
+  }
+
+  50% {
+    bottom: 30vh; /* Alterado para usar altura relativa à altura da tela */
+  }
+
+  60% {
+    bottom: 30vh; /* Alterado para usar altura relativa à altura da tela */
+  }
+
+  100% {
+    bottom: 0;
+  }
+}
